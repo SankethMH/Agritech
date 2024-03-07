@@ -16,7 +16,8 @@ const Account = () => {
                     }
                 });
                 const data = await response.json();
-                setOrders(data.orders);
+                console.log(data)
+                setOrders(data);
                 setLoading(false);
             } catch (error) {
                 console.error('Error fetching orders:', error);
@@ -47,7 +48,7 @@ const Account = () => {
                 <p>Loading...</p>
             ) : (
                 <div>
-                    {orders.length > 0 ? (
+                    {(orders.length) > 0 ? (
                         <table>
                             <thead>
                                 <tr>

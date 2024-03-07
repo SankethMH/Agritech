@@ -36,6 +36,7 @@ const HomeContextProvider = (props) => {
     }, []);
 
     const addToCart = (itemId) => {
+        console.log("Add to Cart");
         setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
         const authToken = localStorage.getItem("auth-token");
         if (authToken) {
