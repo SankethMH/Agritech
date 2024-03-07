@@ -1,0 +1,146 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.navbar{
+    display: flex;
+    justify-content:space-around;
+    padding: 20px;
+    padding-top: 30px;
+    flex:1;
+    text-align: right;
+    
+}
+
+.nav-logo{
+    margin-left:100px;
+}
+.nav-menu{
+    flex:1;
+    display:inline-block;
+    list-style-type:none;
+    margin-right: 80px;
+}
+.nav-menu li{
+    display:inline-block;
+    margin-right:20px;
+}
+
+.nav-menu hr{
+    border : none;
+    width:80%;
+    height:3px;
+    border-radius:10px;
+    background:#ff4141;
+}
+
+.nav-login-cart{
+    margin-right:30px;
+    gap:45px;
+}
+.nav-login-cart img{
+    width:30px;
+    height:30px;
+}
+
+.nav-login-cart button{
+    text-decoration: none;
+    display:inline-block;
+    background:#fcfbfb;
+    outline: none;
+    color:#0c0c0c;
+    padding:8px 30px;
+    border-radius: 30px; 
+    margin-right:80px;
+}
+
+.nav-cart-count{
+    width: 20px;
+    height:20px;
+    display: flex;
+    margin-left:-40px;
+    margin-top:-9px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 11px;
+    font-size: 12px;
+    background:red;
+    color:white;
+}
+.nav-dropdown{
+    display:none;
+}
+
+/* -------- media query---------- */
+@media(max-width:1280px){
+    .navbar{
+        padding:12px 50px;
+    }
+    .nav-menu{
+        gap: 16px;
+    }
+}
+@media(max-width:900px){
+    .nav{
+        padding: 15px 40px;
+    }
+    .nav-menu{
+        gap: 15px;
+    }
+}
+
+@media(max-width:750px){
+    .nav{
+        padding: 15px 20px;
+    }
+    .nav-login-cart{
+        gap: 15px;
+    }
+    .nav-dropdown{
+        display: block;
+        width: 30px;
+        rotate: -90deg;
+        transition: 0.5s;
+    } 
+    .nav-menu{
+        display: none;
+        height: 80px;
+        width: 100%;
+        position: absolute;
+        background-color: white;
+        justify-content: center;
+        top: 60px;
+        left: 0;
+    }
+    .nav-menu-visible{
+        display: flex;
+    }
+    .nav-dropdown.open{
+        transform: rotate(90deg);
+    }
+    .nav-cart-count{
+        margin-left: -25px;
+    }
+}
+
+@media(max-width:500px){
+    .nav{
+        padding: 15px 15px;
+    }
+
+    .nav-menu-visible{
+        height: 70px;
+        top: 60px;
+    }
+    .nav-login-cart{
+        transform: scale(0.8);
+    } 
+    .nav-login-cart{
+        gap: 10px;
+    }
+}
+
+
+

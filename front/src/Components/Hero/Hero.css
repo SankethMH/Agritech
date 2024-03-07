@@ -1,0 +1,35 @@
+header{
+    background-image:url(C:\Users\soumy\Desktop\FSAT\front\src\Components\Assets\Hero-page.avif);
+    background-repeat:no-repeat;
+    background-size:cover;
+    height:750px
+}
+.row{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    justify-content:space-around;
+}
+
+.col-2{
+    margin-top:300px;
+}
+
+.col-2 p{
+    margin-left:-60px;
+    font-weight:650;
+    font-size:40px;
+    color:#000000;
+}
+
+.btn{
+    text-decoration: none;
+    display:inline-block;
+    background:#c33d65;
+    color:#fff;
+    padding:8px 30px;
+    border-radius: 30px;
+    margin:30px 0;
+    margin-left:-60px;
+    transition: background 0.5s;
+}
