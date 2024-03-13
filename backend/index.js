@@ -193,10 +193,13 @@ app.get("/allproducts", async (req, res) => {
 });
 
 app.get("/orders", async (req, res) => {
-    let products = await Order.find({});
-    console.log("All Orders Fetched");
-    res.send(products);
-  });
+  const id = req.query.email;
+  
+  console.log(id);
+  let orders = await Order.find({userId : id});
+  console.log("All Orders Fetched");
+  res.send(orders);
+});
 
 // Schema creating for user model
 
@@ -233,12 +236,10 @@ const Users = mongoose.model("User", {
 app.post("/signup", async (req, res) => {
   let check = await Users.findOne({ email: req.body.email });
   if (check) {
-    return res
-      .status(400)
-      .json({
-        success: false,
-        errors: "existing user found with same email address",
-      });
+    return res.status(400).json({
+      success: false,
+      errors: "existing user found with same email address",
+    });
   }
   let cart = {};
   for (let i = 0; i < 300; i++) {
@@ -361,10 +362,10 @@ app.post("/checkout", fetchuser, async (req, res) => {
 
     // Iterate through validItemIds to calculate total and create items array
     for (const itemId in cartData) {
-        console.log(itemId + cartData[itemId])
+      console.log(itemId + cartData[itemId]);
       if (cartData[itemId] >= 1) {
-        const product = await Product.find({id:itemId});
-        console.log(product)
+        const product = await Product.find({ id: itemId });
+        console.log(product);
         if (!product) {
           console.error(`Product not found for ID: ${itemId}`);
           continue;
@@ -376,7 +377,7 @@ app.post("/checkout", fetchuser, async (req, res) => {
           price: product[0].price,
         });
         total += product[0].price * cartData[itemId];
-        console.log(items)
+        console.log(items);
       }
     }
 

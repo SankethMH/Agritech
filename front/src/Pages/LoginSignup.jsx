@@ -55,8 +55,15 @@ const LoginSignup = () => {
   .then((data) =>dataObj=data);
     if(dataObj){
       if (dataObj.success) {
+        console.log(dataObj.data);
+        console.log(dataObj.data._id);
         localStorage.setItem('auth-token',dataObj.token);
-        localStorage.setItem('userData',dataObj.data.user)
+        localStorage.setItem('userName',(dataObj.data.name))
+        localStorage.setItem('userEmail',(dataObj.data.email))
+        localStorage.setItem('userAddress',(dataObj.data.address))
+        localStorage.setItem('userPhone',(dataObj.data.phone))
+        localStorage.setItem('userId',dataObj.data._id)
+        
         window.location.replace("/");
       }
       else
