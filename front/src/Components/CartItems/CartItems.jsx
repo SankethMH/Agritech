@@ -7,6 +7,7 @@ const CartItems = () => {
     const { getTotalCartAmount, all_product, cartItems, removeFromCart } = useContext(HomeContext);
 
     const handleCheckout = async () => {
+        console.log(localStorage.getItem('auth-token'))
         try {
             const response = await fetch('http://localhost:4001/checkout', {
                 method: 'POST',
@@ -22,6 +23,7 @@ const CartItems = () => {
             const data = await response.json();
             if (data.success) {
                 console.log('Order placed successfully');
+                console.log(data)
             } else {
                 console.error('Order placement failed:', data.errors);
             }

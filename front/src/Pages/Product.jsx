@@ -12,9 +12,9 @@ const Product = () => {
   const product=all_product.find((e)=>e.id===Number(productId));
   return (
     <div>
-      <Breadcrum product={product}/>
+      {/* <Breadcrum product={product}/> */}
       <ProductDisplay product={product}/>
-      <DescriptionBox product={product}/>
+      {/* <DescriptionBox product={product}/> */}
       <RelatedProducts/>
     </div>
   )
